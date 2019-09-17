@@ -1,0 +1,63 @@
+<html>
+    <style>
+    body{
+        overflow:hidden;
+    }
+    .talk_box{
+        width: 40%;
+        float: right;
+        margin-top: 12%;
+        padding: 20px;
+        font-size: 23px;
+        border:1px solid #fff;
+        box-shadow: 1px 2px 4px -2px;
+    }
+    .talk_box p{
+        color:#fff;
+    }
+    #music_player{
+        display:none;
+    }
+     
+    </style>
+    <body>
+            <audio  id="music_player">
+                    <source src="asset/miaomiao.wav" type="audio/wav">
+            </audio>
+
+        <div id="app">
+        <div id="main_girl" @click="close_the_girl" v-show="show_girl==true">
+                <div class="talk_box"> 
+                    <p class="txt">{{message}}</p>    
+                </div>
+                <img src="BeautyGirl.png" style="height:100%;" />
+        </div>
+      </div>
+    
+    </body>
+
+<script src="asset/vue.js" ></script>
+
+    <script>
+        window.app = new Vue({
+        el: '#app',
+        data: {
+            show_girl:false,
+            message: 'Hello Vue!'
+        },
+        methods:{
+            show_the_girl:function(msg){
+                
+                this.message = msg
+                this.show_girl = true;
+                $("#music_player").play();
+            },
+            close_the_girl:function(){
+                this.show_girl = false;
+            },
+        }
+        })
+
+    
+    </script>
+</html>

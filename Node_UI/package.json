@@ -1,0 +1,13 @@
+{
+  "name": "visual-helper",
+  "version": "1.0.0",
+  "description": "虛擬助理醬",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^6.0.9",
+    "electron-builder": "^21.2.0"
+  }
+}
