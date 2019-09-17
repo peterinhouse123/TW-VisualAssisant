@@ -5,6 +5,7 @@ from playsound import playsound
 
 class main():
     def __init__(self,):
+        self.ws = None
         # self.UI = UI.App(image="imageUnityGirl02.png")
         print("init_done")
 

@@ -18,6 +18,7 @@
     #music_player{
         display:none;
     }
+    
      
     </style>
     <body>
@@ -37,20 +38,27 @@
     </body>
 
 <script src="asset/vue.js" ></script>
+<script src="asset/ws.js" ></script>
+
 
     <script>
-        window.app = new Vue({
+
+
+    window.app = new Vue({
         el: '#app',
         data: {
             show_girl:false,
             message: 'Hello Vue!'
+        },
+        mounted:function(){
+            Websocket_init();
         },
         methods:{
             show_the_girl:function(msg){
                 
                 this.message = msg
                 this.show_girl = true;
-                $("#music_player").play();
+                document.getElementById('music_player').play()
             },
             close_the_girl:function(){
                 this.show_girl = false;
