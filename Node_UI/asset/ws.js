@@ -1,6 +1,6 @@
 var wsUri = "ws://127.0.0.1:7777";
 var output;
-
+var websocket
 function Websocket_init()
 {
     websocket = new WebSocket(wsUri);
@@ -19,12 +19,19 @@ function onClose(evt)
 {
  
 }
-
+function Send_Order(order,detail){
+    var pack = {"order":order,"detail":detail}
+    pack = JSON.stringify(pack)
+    // console.log(pack)
+    pack = btoa(pack)
+    websocket.send(pack);
+    // console.log(pack)
+}
 function onMessage(evt)
 {
     var data = atob(evt.data);
     data = JSON.parse(data)
- console.log("Get_MEssage:"+data)
+//  console.log("Get_MEssage:"+data)
 
     switch (data["order"]) {
         case "notify":

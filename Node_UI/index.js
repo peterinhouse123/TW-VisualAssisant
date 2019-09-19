@@ -12,7 +12,7 @@ function createWindow () {
 //   })
     let win = new BrowserWindow({ transparent: true, frame: false })
   // and load the index.html of the app.
-//   win.webContents.openDevTools()
+  // win.webContents.openDevTools()
   win.setMenu(null);
   win.loadFile('index.html')
 }

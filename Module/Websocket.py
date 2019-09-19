@@ -4,8 +4,9 @@ import base64
 
 
 class WS():
-    def __init__(self):
-        self.ws = WebsocketServer(7777, host='127.0.0.1')
+    def __init__(self,Asseist):
+        self.ws = None #type: WebsocketServer
+        self.Asseist = Asseist
 
     def Init_Websocket(self):
         self.ws = WebsocketServer(7777, host='127.0.0.1')
@@ -28,7 +29,8 @@ class WS():
             cmd = json.loads(data)
             if cmd['order'] == "push_msg":
                 self.Send_Order_To_All(order="notify",detail=cmd['detail'])
-
+            if cmd['order'] == "close_win":
+                self.Asseist.Helper_Win_Hind()
         except Exception as e:
             print("Websocket 接收訊息錯誤格式")
             print(e)

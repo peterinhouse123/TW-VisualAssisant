@@ -12,7 +12,7 @@ https://youtu.be/Y05_3lJD7Lw
 - 完成Websocket server與溝通指令
 - 初步完成Weboscket 與介面串接測試
 - 完成基於 electron 的彈窗介面
-
+- 完成與後端的串接，並且可以隱藏與置頂窗口
 
 ## 使用說明
 - 環境安裝
@@ -25,19 +25,14 @@ npm install
 - 啟動
 ```
 Python端
-cd ./Module
-python Websocket.py
+python Assistant.py
 
-介面端 
-cd ./Node_UI
-electron .
 ```
 
 - 測試發送訊息
 
 ```
-請用任意的WEBSOCKET連接工具連接到
-ws://127.0.0.1:7777
-發送 eyJvcmRlciI6ICJwdXNoX21zZyIsICJkZXRhaWwiOiAiXHU2M2E4XHU5MDAxXHU2ZTJjXHU4YTY2In0=
-
+請在任意瀏覽器網址列輸入
+http://127.0.0.1:5000/push/自訂訊息
+即可以推播
 ```

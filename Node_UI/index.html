@@ -11,6 +11,7 @@
         font-size: 23px;
         border:1px solid #fff;
         box-shadow: 1px 2px 4px -2px;
+        background: #555;
     }
     .talk_box p{
         color:#fff;
@@ -47,8 +48,8 @@
     window.app = new Vue({
         el: '#app',
         data: {
-            show_girl:false,
-            message: 'Hello Vue!'
+            show_girl:true,
+            message: '助理啟動成功！請您點擊畫面中心的妹子進行隱藏'
         },
         mounted:function(){
             Websocket_init();
@@ -62,6 +63,7 @@
             },
             close_the_girl:function(){
                 this.show_girl = false;
+                Send_Order("close_win")
             },
         }
         })
