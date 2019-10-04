@@ -1,6 +1,5 @@
 #用來接收消息用的
 from flask import Flask
-from Module import UI
 
 app = Flask(__name__)
 

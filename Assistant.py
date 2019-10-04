@@ -1,14 +1,9 @@
 # -- coding: utf-8 --
-from Module import UI
 from Controller import API
-from playsound import playsound
 from Module import Websocket
 from threading import Thread
 import win32con
 import win32gui
-import win32process
-import psutil
-import subprocess
 import os
 class main():
     def __init__(self,):
