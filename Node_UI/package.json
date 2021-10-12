@@ -7,7 +7,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "electron": "^6.0.9",
+    "electron": "^11.5.0",
     "electron-builder": "^21.2.0"
   }
 }
